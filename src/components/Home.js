@@ -33,7 +33,9 @@ export default class Home extends Component {
                             <th>Imagen</th>
                             <th>Modelo</th>
                             <th>Conductor</th>
+                            <th>Detalles</th>
                             <th>Modificar</th>
+                            <th>Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,8 +46,12 @@ export default class Home extends Component {
                                     <td>{coche.marca} {coche.modelo}</td>
                                     <td>{coche.conductor}</td>
                                     <td>
-                                        <NavLink to={'/update/' + coche.idCoche + '/' + coche.marca + '/' + coche.modelo + '/' + coche.conductor + '/' + coche.imagen} className='btn btn-success'>Update</NavLink>
+                                        <NavLink to={'/detalles/' + coche.idCoche} className='btn btn-info'>Detalles</NavLink>
                                     </td>
+                                    <td>
+                                        <NavLink to={'/update/' + coche.idCoche} className='btn btn-success'>Update</NavLink>
+                                    </td>
+                                    <td><NavLink className='btn btn-danger' to={'/delete/'+ coche.idCoche }>Delete</NavLink></td>
                                 </tr>)
                             })
                         }

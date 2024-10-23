@@ -4,12 +4,22 @@ import Home from './Home'
 import Menu from './Menu'
 import CreateCoche from './CreateCoche'
 import UpdateCoche from './UpdateCoche'
+import DetalleCoche from './DetalleCoche'
+import DeleteCoche from './DeleteCoche'
 
 export default class Router extends Component {
     render() {
         function UpdateCocheElement() {
-            let { id, marca, modelo, conductor, imagen } = useParams();
-            return (<UpdateCoche id={id} marca={marca} modelo={modelo} conductor={conductor} imagen={imagen} />)
+            let { id } = useParams();
+            return (<UpdateCoche id={id} />)
+        }
+        function DetalleCocheElement() {
+            let { id } = useParams();
+            return (<DetalleCoche id={id} />)
+        }
+        function DeleteCocheElement() {
+            let { id } = useParams();
+            return (<DeleteCoche id={id} />)
         }
         return (
             <BrowserRouter>
@@ -17,9 +27,9 @@ export default class Router extends Component {
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/create' element={<CreateCoche />} />
-                    {/* <Route path='/detalles/:iddepartamento' element={<DetalleDepartamentoElement />} /> */}
-                    <Route path='/update/:id/:marca/:modelo/:conductor/:imagen' element={<UpdateCocheElement />} />
-                    {/* <Route path='/delete/:id' element={<DeleteDepartamentoeElement />} /> */}
+                    <Route path='/detalles/:id' element={<DetalleCocheElement />} />
+                    <Route path='/update/:id' element={<UpdateCocheElement />} />
+                    <Route path='/delete/:id' element={<DeleteCocheElement />} />
                 </Routes>
             </BrowserRouter>
         )
