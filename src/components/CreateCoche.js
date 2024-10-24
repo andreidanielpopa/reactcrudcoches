@@ -4,6 +4,7 @@ import Global from './Global';
 import { Navigate } from 'react-router-dom'
 
 export default class CreateCoche extends Component {
+    //El id me lo podria ahorrar porque es autoincrementado
     cajaId = React.createRef();
     cajaMarca = React.createRef();
     cajaModelo = React.createRef();

@@ -26,7 +26,7 @@ export default class Home extends Component {
 
     render() {
         return (
-            <div>
+            <div className='mx-auto w-75 pt-5'>
                 <table className='table table-striped'>
                     <thead>
                         <tr>
